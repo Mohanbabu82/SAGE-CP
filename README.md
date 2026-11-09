@@ -23,7 +23,7 @@ The notebook uses the Kaggle dataset *Personal Key Indicators of Heart Disease* 
 ## Reproducing the run
 
 1. On Kaggle, create a notebook, add the dataset above as input and import `notebooks/SAGE_CP_v2_1.ipynb`.
-2. Run all cells. The reported run took 78 minutes on a CPU session. Results are written to `/kaggle/working/results/`.
+2. Run all cells. The reported run took about 78 minutes on Kaggle. Results are written to `/kaggle/working/results/`.
 3. To rebuild tables and figures: `python scripts/make_figures_tables.py <results_dir> <out_dir>`.
 
 Recorded environment of the reported run: Python 3.13.18, numpy 2.1.3, pandas 2.3.3, scikit-learn 1.6.1, scipy 1.16.3, matplotlib 3.10.0, xgboost 3.4.1, lightgbm 4.6.0, catboost 1.2.10. Seeds 0–4 (sensitivity runs 0–2), bootstrap seed 2026.
