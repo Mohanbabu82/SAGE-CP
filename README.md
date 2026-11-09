@@ -36,4 +36,4 @@ The 93 output files of the reported run are not in this repository. [To be depos
 
 ## License and citation
 
-License: [to be chosen by the authors]. Citation: [to be added after publication].
+License: MIT (see `LICENSE`). Citation: [to be added after publication].

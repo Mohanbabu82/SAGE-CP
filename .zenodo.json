@@ -1,0 +1,13 @@
+{
+  "title": "SAGE-CP v2.1: code for conformal prediction across U.S. regions (BRFSS 2022)",
+  "upload_type": "software",
+  "description": "Analysis notebook, executed Kaggle run, figure/table script and validation simulations for a component-wise evaluation of group-conditional and density-ratio-weighted conformal prediction under geographic holdout on the Kaggle BRFSS 2022 complete-case extract (246,022 respondents). The source data are not included; they are available from Kaggle (kamilpytlak/personal-key-indicators-of-heart-disease).",
+  "creators": [
+    {"name": "A, Mohan Babu", "affiliation": "Vellore Institute of Technology"},
+    {"name": "V, Vasumadhi", "affiliation": "Vellore Institute of Technology"},
+    {"name": "Madhan, E. S.", "affiliation": "Vellore Institute of Technology"}
+  ],
+  "license": "MIT",
+  "keywords": ["conformal prediction", "covariate shift", "distribution shift", "BRFSS", "group-conditional coverage", "uncertainty quantification"],
+  "version": "v2.1"
+}
