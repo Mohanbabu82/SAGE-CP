@@ -1,5 +1,7 @@
 # SAGE-CP v2.1
 
+[![DOI](https://zenodo.org/badge/1451303698.svg)](https://doi.org/10.5281/zenodo.24082660)
+
 Code for the study *Group-Conditional and Density-Ratio-Weighted Conformal Prediction Across U.S. Regions: A Component-Wise Evaluation on Cross-Sectional Health Survey Data* (Mohan Babu A, Vasumadhi V, E. S. Madhan; School of Computer Science and Engineering, Vellore Institute of Technology). Manuscript under preparation for IEEE Access.
 
 SAGE-CP stands for shift-aware, group-conditional conformal prediction with effective-sample-size diagnostics. The name labels the configuration being evaluated; it does not claim equal coverage across groups.
@@ -36,4 +38,4 @@ The 93 output files of the reported run are not in this repository. [To be depos
 
 ## License and citation
 
-License: MIT (see `LICENSE`). Citation: [to be added after publication].
+License: MIT (see `LICENSE`). Archived release: v2.1, DOI [10.5281/zenodo.24082661](https://doi.org/10.5281/zenodo.24082661) (all versions: [10.5281/zenodo.24082660](https://doi.org/10.5281/zenodo.24082660)). Paper citation: [to be added after publication].
