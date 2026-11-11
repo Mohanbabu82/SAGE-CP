@@ -2,6 +2,7 @@
 import os, shutil, glob, numpy as np, pandas as pd
 R = '../v4res'; D = 'derived/v4'; os.makedirs(D, exist_ok=True)
 for f in glob.glob(f'{R}/*.csv'): shutil.copy(f, D)
+shutil.copy('../v41res/v4_nhanes_replicates.csv', D)
 S = pd.read_csv(f'{R}/v4_summary_by_method.csv'); C = pd.read_csv(f'{R}/v4_contrasts.csv'); U = pd.read_csv(f'{R}/units.csv', low_memory=False)
 mn = lambda v: f'{v:.3f}'.replace('-', '−'); m4 = lambda v: (f'{v:+.4f}' if abs(v) < 0.1 else f'{v:+.3f}').replace('-', '−')
 def pfmt(p):
@@ -69,14 +70,16 @@ for st, eo, lab in [('RAWP', None, 'BRFSS 2022, 54 jurisdictions (self-report)')
 out['triage'] = '\n'.join(rows)
 
 # ---- NHANES ----
-N = pd.read_csv(f'{R}/v4_nhanes_summary.csv')
-rows = ['| Design | Method | Coverage | Positive-class coverage | Undiagnosed covered (set contains 1) | Undiagnosed ruled out ({0}) | Worst calibrated group (pos.) | Mean set size | Share {0, 1} |', '|' + '---|' * 9]
+N = pd.read_csv(f'{R}/v4_nhanes_summary.csv'); CI = pd.read_csv('derived/v4/nhanes_design_ci.csv')
+rows = ['| Design | Method | Coverage | Positive-class coverage | Undiagnosed covered (set contains 1) [95% design-based interval] | Undiagnosed ruled out ({0}) | Worst calibrated group (pos.) | Mean set size | Share {0, 1} |', '|' + '---|' * 9]
 for st, eo, lab, meths in [('NHANES1', 'total', 'Calibrated on BRFSS 2022 self-report; evaluated on measured diabetes', ['ClassCond', 'Weighted+ClassCond', 'GroupCond', 'SAGE-CP', 'GroupCond@0.20']),
                            ('NHANES2', 'total', 'Within NHANES, measured diabetes', ['ClassCond', 'GroupCond', 'GroupCond@0.20'])]:
     z = N[(N.study == st) & (N.eval_outcome == eo) & (N.weighting == 'design')].set_index('method')
     for i, m in enumerate(meths):
         r = z.loc[m]
-        rows.append(f'| {lab if i == 0 else ""} | {m.replace("Weighted+ClassCond", "W+CC").replace("@0.20", ", α = 0.20")} | {r.coverage:.3f} | {r.cov_pos:.3f} | {r.cov1_undiag:.3f} | {r.zero_undiag:.3f} | {r.wg_cal_pos:.3f} | {r.set_size:.3f} | {r.both:.3f} |')
+        ci = CI[(CI.study == st) & (CI.eval_outcome == eo) & (CI.method == m) & (CI.metric == 'cov1_undiag')]
+        u = f'{r.cov1_undiag:.3f}' + (f' [{ci.lo.iloc[0]:.3f}, {ci.hi.iloc[0]:.3f}]' if len(ci) else '')
+        rows.append(f'| {lab if i == 0 else ""} | {m.replace("Weighted+ClassCond", "W+CC").replace("@0.20", ", α = 0.20")} | {r.coverage:.3f} | {r.cov_pos:.3f} | {u} | {r.zero_undiag:.3f} | {r.wg_cal_pos:.3f} | {r.set_size:.3f} | {r.both:.3f} |')
 out['nhanes'] = '\n'.join(rows)
 
 # ---- concept-shift diagnostics ----
