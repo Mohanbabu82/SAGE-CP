@@ -18,6 +18,8 @@ SAGE-CP stands for shift-aware, group-conditional conformal prediction with effe
 | `reference/` | `worst_group_reference(...)` and `worst_group_bounds(...)`: the finite-sample worst-group reference (Proposition 3) and its simulation-free bounds (Theorem 1), with their validation. |
 | `results/v3/` | Combined outputs of both extension-study runs: per-unit results (`units.csv`, `v3_unit_level.csv`), method summaries, all pre-specified contrasts, finite-sample reference gaps, the Gibbs function-class selections, configurations and checks, and the Markdown tables used in the manuscript. |
 | `scripts/v3_tables.py` | Builds Table IX and Supplementary Tables S21–S23 from `results/v3/`. |
+| `results/v2.1/SAGE-CP_results_archive.zip` | The 93-file results archive of the v2.1 run (main analysis). |
+| `scripts/verify_numbers.py` | Checks every decimal number in the manuscript and supplement (.docx or .md) against the result files: `python scripts/verify_numbers.py paper.docx supplement.docx --results results/ --raw <v2.1 raw_results.csv>`. The only expected unmatched value is the template's DOI placeholder. |
 | `scripts/make_figures_tables.py` | Regenerates the manuscript's tables and figures from the run's CSV outputs. |
 | `scripts/posthoc_rules.py` | Post hoc analyses from the archived v2.1 outputs: monitor with the same group set, and equity/alarm rules re-specified against the finite-sample reference. |
 | `scripts/fig_age.py` | Age-gradient figure from `group_results.csv`. |
