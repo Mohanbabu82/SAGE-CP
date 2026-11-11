@@ -14,6 +14,8 @@ SAGE-CP stands for shift-aware, group-conditional conformal prediction with effe
 | `notebooks/SAGE_CP_v2_1_executed_kaggle.ipynb` | The same notebook as executed on Kaggle for the reported run, with outputs, plus two cells that print the summaries and zip the results folder. |
 | `notebooks/SAGE_CP_v3_extension_studies.ipynb` | Extension studies for the revision: leave-one-state-out, raw BRFSS 2022 with design weights, 2022→2023 temporal validation, and a tuned Gibbs–Cherian–Candès conditional-calibration baseline. Resumable; downloads the CDC files (Internet ON). |
 | `scripts/make_figures_tables.py` | Regenerates the manuscript's tables and figures from the run's CSV outputs. |
+| `scripts/posthoc_rules.py` | Post hoc analyses from the archived v2.1 outputs: monitor with the same group set, and equity/alarm rules re-specified against the finite-sample reference. |
+| `scripts/fig_age.py` | Age-gradient figure from `group_results.csv`. |
 | `simulations/reference_validation.py` | Simulation-based calibration of the finite-sample worst-group references (Supplementary Section S3). |
 | `simulations/misspec_sim.py` | Domain-classifier misspecification check (Supplementary Section S4). |
 
