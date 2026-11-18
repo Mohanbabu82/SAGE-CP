@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/1451303698.svg)](https://doi.org/10.5281/zenodo.24082660)
 
-Code for the study *Group-Conditional and Density-Ratio-Weighted Conformal Prediction Across U.S. Regions: A Component-Wise Evaluation on Cross-Sectional Health Survey Data* (Mohan Babu A, Vasumadhi V, E. S. Madhan; School of Computer Science and Engineering, Vellore Institute of Technology). Manuscript under preparation for IEEE Access.
+Code for the study *Group-Conditional and Density-Ratio-Weighted Conformal Prediction Across U.S. Regions: A Component-Wise Evaluation on Cross-Sectional Health Survey Data* (Mohan Babu A, Vasumathi V, E. S. Madhan; School of Computer Science and Engineering, Vellore Institute of Technology). Manuscript under preparation for IEEE Access.
 
 SAGE-CP stands for shift-aware, group-conditional conformal prediction with effective-sample-size diagnostics. The name labels the configuration being evaluated; it does not claim equal coverage across groups.
 
