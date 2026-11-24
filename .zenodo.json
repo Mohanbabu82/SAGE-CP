@@ -1,13 +1,33 @@
 {
-  "title": "SAGE-CP v2.1: code for conformal prediction across U.S. regions (BRFSS 2022)",
+  "title": "SAGE-CP v5: code and results for worst-group coverage of conformal prediction under geographic shift (BRFSS, NHANES)",
   "upload_type": "software",
-  "description": "Analysis notebook, executed Kaggle run, figure/table script and validation simulations for a component-wise evaluation of group-conditional and density-ratio-weighted conformal prediction under geographic holdout on the Kaggle BRFSS 2022 complete-case extract (246,022 respondents). The source data are not included; they are available from Kaggle (kamilpytlak/personal-key-indicators-of-heart-disease).",
+  "description": "Code, notebooks and result summaries for the study 'Worst-group coverage of conformal prediction under geographic shift: an exact finite-sample reference and a component-wise evaluation in health survey data' (submitted to BMC Medical Research Methodology). Includes the analysis notebooks (v2.1 to v4.3) for internal-external validation across 54 U.S. jurisdictions of the raw BRFSS 2022, the temporal check on BRFSS 2023 and external validation on NHANES 2021-2023 (measured diabetes, hypertension and high cholesterol); survey-weighted calibration and randomised tie-breaking arms; the installable worst-group-reference Python module (exact and design-weighted finite-sample references and simulation-free bounds) with a worked example and tests; validation simulations; and scripts that regenerate the tables and figures and check every reported number. Source data are public (CDC BRFSS, NHANES, Kaggle) and not included.",
   "creators": [
-    {"name": "A, Mohan Babu", "affiliation": "Vellore Institute of Technology"},
-    {"name": "V, Vasumathi", "affiliation": "Vellore Institute of Technology"},
-    {"name": "Madhan, E. S.", "affiliation": "Vellore Institute of Technology"}
+    {
+      "name": "A, Mohan Babu",
+      "affiliation": "Vellore Institute of Technology"
+    },
+    {
+      "name": "V, Vasumathi",
+      "affiliation": "Vellore Institute of Technology"
+    },
+    {
+      "name": "Madhan, E. S.",
+      "affiliation": "Vellore Institute of Technology"
+    }
   ],
   "license": "MIT",
-  "keywords": ["conformal prediction", "covariate shift", "distribution shift", "BRFSS", "group-conditional coverage", "uncertainty quantification"],
-  "version": "v2.1"
+  "keywords": [
+    "conformal prediction",
+    "covariate shift",
+    "distribution shift",
+    "BRFSS",
+    "group-conditional coverage",
+    "uncertainty quantification",
+    "NHANES",
+    "survey weights",
+    "external validation",
+    "finite-sample reference"
+  ],
+  "version": "v5"
 }
