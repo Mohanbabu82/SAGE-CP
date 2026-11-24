@@ -1,0 +1,4 @@
+check,weight_sigma,rho,calibration,score_grid,random_ties,min_group,min_pos,reps,obs_weighted_mean,refw_mean,share_below_refw_p05,share_weighted_below_unweighted_ref_p05,obs_unweighted_mean,refu_mean,share_unweighted_below_refu_p05,mc_se_share
+informative_weights,1.0,0.1,unweighted,0,False,100,30,2000,0.7650452010046921,0.7920222363985424,0.0995,0.356,0.8257568476809878,0.8259387530433758,0.054,0.004873397172404482
+informative_weights,1.0,0.2,unweighted,0,False,100,30,2000,0.7372049964672454,0.7920690127171052,0.1835,0.5375,0.8259570758808068,0.8260143904021111,0.047,0.004873397172404482
+informative_weights,1.0,0.4,unweighted,0,False,100,30,2000,0.6828344888243821,0.7926457090837088,0.452,0.836,0.8252217107094526,0.8259263786992129,0.048,0.004873397172404482

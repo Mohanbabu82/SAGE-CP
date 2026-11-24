@@ -1,0 +1,4 @@
+metric,A,B,point_diff,rep_mean,lo,hi,n_replicates
+cov1_undiag,GroupCond,ClassCond,0.1725,0.1721,0.1505,0.1926,200
+wg_cal_pos,GroupCond,ClassCond,0.5758,0.5642,0.5219,0.6074,200
+cov1_undiag,ClassCond-SW,ClassCond,0.1127,0.1126,0.1027,0.1225,200

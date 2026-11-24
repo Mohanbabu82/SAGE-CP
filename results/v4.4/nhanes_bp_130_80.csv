@@ -1,0 +1,5 @@
+study,eval_outcome,weighting,method,coverage,cov_pos,set_size,both,wg_cal_pos,cov1_undiag,zero_undiag,auc_target,ref_exact_mean,n,n_pos,undiag_lo,undiag_hi
+NHANES1_BP,total,design,ClassCond,0.8722,0.8081,1.4265,0.4265,0.2894,0.6927,0.3073,0.7792,0.8724,3060,1703.7,0.6724,0.7121
+NHANES1_BP,total,design,ClassCond-SW,0.8948,0.8829,1.4567,0.4567,0.4605,0.8054,0.1946,0.7792,0.8724,3060,1703.7,0.7876,0.8234
+NHANES1_BP,total,design,GroupCond,0.8942,0.8983,1.6017,0.6017,0.8652,0.8653,0.1347,0.7792,0.8724,3060,1703.7,0.8478,0.8852
+NHANES1_BP,total,design,GroupCond-SW,0.8968,0.9046,1.6262,0.6262,0.8632,0.8746,0.1254,0.7792,0.8724,3060,1703.7,0.8590,0.8938
