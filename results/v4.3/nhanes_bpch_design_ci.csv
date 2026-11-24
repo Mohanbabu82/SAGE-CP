@@ -1,0 +1,17 @@
+study,eval,metric,A,B,diff_rep_mean,lo,hi,n_replicates
+NHANES1_BP,total,cov1_undiag,GroupCond,ClassCond,0.0805,0.0375,0.1211,200
+NHANES1_BP,total,cov1_undiag,ClassCond-SW,ClassCond,0.0914,0.0709,0.1109,200
+NHANES1_BP,total,cov1_undiag,GroupCond-SW,GroupCond,0.0083,0.0035,0.0130,200
+NHANES1_BP,total,cov_pos,GroupCond,ClassCond,0.0451,0.0296,0.0590,200
+NHANES1_BP,total,wg_cal_pos,GroupCond,ClassCond,0.5648,0.5098,0.6171,200
+NHANES1_BP,total,wg_cal_pos,ClassCond-SW,ClassCond,0.1883,0.1311,0.2601,200
+NHANES1_BP,total,wg_cal_pos,GroupCond-SW,GroupCond,0.0096,-0.0005,0.0236,200
+NHANES1_BP,total,set_size,GroupCond,ClassCond,0.1753,0.1586,0.1898,200
+NHANES1_CH,total,cov1_undiag,GroupCond,ClassCond,0.2120,0.1683,0.2610,200
+NHANES1_CH,total,cov1_undiag,ClassCond-SW,ClassCond,0.1477,0.1074,0.1882,200
+NHANES1_CH,total,cov1_undiag,GroupCond-SW,GroupCond,0.0233,0.0102,0.0363,200
+NHANES1_CH,total,cov_pos,GroupCond,ClassCond,0.0780,0.0613,0.0978,200
+NHANES1_CH,total,wg_cal_pos,GroupCond,ClassCond,0.6078,0.5480,0.6670,200
+NHANES1_CH,total,wg_cal_pos,ClassCond-SW,ClassCond,0.3184,0.2822,0.3527,200
+NHANES1_CH,total,wg_cal_pos,GroupCond-SW,GroupCond,0.0177,0.0042,0.0327,200
+NHANES1_CH,total,set_size,GroupCond,ClassCond,0.1860,0.1687,0.2007,200

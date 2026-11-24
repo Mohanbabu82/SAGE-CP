@@ -1,0 +1,9 @@
+study,eval,method,metric,lo,hi
+NHANES1_BP,total,ClassCond,cov1_undiag,0.7435,0.8389
+NHANES1_BP,total,GroupCond,cov1_undiag,0.8417,0.9059
+NHANES1_CH,total,ClassCond,cov1_undiag,0.6456,0.7172
+NHANES1_CH,total,GroupCond,cov1_undiag,0.8629,0.9160
+NHANES1_BP,total,ClassCond-SW,cov1_undiag,0.8450,0.9263
+NHANES1_BP,total,GroupCond-SW,cov1_undiag,0.8525,0.9135
+NHANES1_CH,total,ClassCond-SW,cov1_undiag,0.7960,0.8601
+NHANES1_CH,total,GroupCond-SW,cov1_undiag,0.8957,0.9345

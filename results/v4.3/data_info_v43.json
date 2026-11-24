@@ -1,0 +1,4 @@
+{"source":"Kaggle notebook 'SAGE-CP v4.3 revision analyses' (session 373252808), config hash ff605d6f9e36",
+ "nhanes_bp":{"n_adults":6123,"n_kept":6119,"prevalence_diagnosed":0.3054469265683904,"prevalence_total":0.3640842499102402,"prevalence_undiagnosed":0.05863732334184984},
+ "nhanes_ch":{"n_adults":5717,"n_kept":5684,"prevalence_diagnosed":0.3458841420889015,"prevalence_total":0.3975827128454043,"prevalence_undiagnosed":0.0516985707565027},
+ "brfss2023":{"n_raw":433323,"n_kept":425468},"brfss2022":{"n_raw":445132,"n_kept":435969}}

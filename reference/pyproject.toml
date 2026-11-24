@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "worst-group-reference"
+version = "1.0.0"
+description = "Exact finite-sample reference, design-weighted reference and simulation-free bounds for worst-group coverage of label x cell split conformal prediction"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.22", "scipy>=1.8"]
+authors = [{name = "Mohan Babu A"}, {name = "Vasumathi V"}, {name = "E. S. Madhan"}]
+keywords = ["conformal prediction", "worst-group coverage", "Mondrian", "survey weights"]
+
+[project.urls]
+Repository = "https://github.com/Mohanbabu82/SAGE-CP"
+
+[tool.setuptools]
+py-modules = ["worst_group_reference"]

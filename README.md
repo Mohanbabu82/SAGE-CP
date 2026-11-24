@@ -1,8 +1,8 @@
-# SAGE-CP v2.1
+# SAGE-CP
 
 [![DOI](https://zenodo.org/badge/1451303698.svg)](https://doi.org/10.5281/zenodo.24082660)
 
-Code for the study *Group-Conditional and Density-Ratio-Weighted Conformal Prediction Across U.S. Regions: A Component-Wise Evaluation on Cross-Sectional Health Survey Data* (Mohan Babu A, Vasumathi V, E. S. Madhan; School of Computer Science and Engineering, Vellore Institute of Technology). Manuscript under preparation for IEEE Access.
+Code for the study *Worst-group coverage of conformal prediction under geographic shift: an exact finite-sample reference and a component-wise evaluation in health survey data* (Mohan Babu A, Vasumathi V, E. S. Madhan; School of Computer Science and Engineering, Vellore Institute of Technology). Manuscript prepared for BMC Medical Research Methodology.
 
 SAGE-CP stands for shift-aware, group-conditional conformal prediction with effective-sample-size diagnostics. The name labels the configuration being evaluated; it does not claim equal coverage across groups.
 
@@ -15,7 +15,9 @@ SAGE-CP stands for shift-aware, group-conditional conformal prediction with effe
 | `notebooks/SAGE_CP_v3_extension_studies.ipynb` | Extension studies for the revision: leave-one-state-out, raw BRFSS 2022 with design weights, 2022→2023 temporal validation, and a tuned Gibbs–Cherian–Candès conditional-calibration baseline. Resumable; downloads the CDC files (Internet ON). |
 | `notebooks/SAGE_CP_v3_run2_RAW_TEMP.ipynb` | Second session of the extension studies (RAW and TEMP only), reading the CDC LLCP2022/LLCP2023 XPT files from an attached Kaggle dataset. |
 | `notebooks/SAGE_CP_v4_revision_studies.ipynb` | Second-revision studies: raw BRFSS 2022 as primary analysis with design-based (PSU/strata) standard errors, missing-data sensitivity (missing indicators, multiple imputation), calibrated CatBoost and full features, tuned Gibbs baseline in the 54-state studies, concept-shift diagnostics, and external validation with measured diabetes in NHANES 2021–2023. |
-| `reference/` | `worst_group_reference(...)` and `worst_group_bounds(...)`: the finite-sample worst-group reference (Proposition 3) and its simulation-free bounds (Theorem 1), with their validation. |
+| `reference/` | Installable Python module `worst-group-reference` (`pip install "git+https://github.com/Mohanbabu82/SAGE-CP.git#subdirectory=reference"`): `worst_group_reference(...)` (Proposition 3; with `weights=`, the design-weighted reference of Proposition 5) and `worst_group_bounds(...)` (Proposition 4, formerly Theorem 1), with a worked example (`reference/examples/worked_example.py`), tests and their validation. |
+| `notebooks/SAGE_CP_v4_2_survey_weighted_calibration.ipynb`, `notebooks/SAGE_CP_v4_3_revision.ipynb` (sources in `src_v4_2/`, `src_v4_3/`) | Revision runs: survey-weighted calibration arms (ClassCond-SW, GroupCond-SW, SAGE-CP-SW), the design-weighted reference, randomised tie-breaking (-RT arms), and NHANES external validation for hypertension and high cholesterol calibrated on BRFSS 2023. `src_v4_3/sim_prop5.py` is the offline simulation of Additional file 1, Section S15. |
+| `results/v4.3/` | Summaries of the v4.3 Kaggle run used in the manuscript (pooled method summaries, contrasts, NHANES hypertension and cholesterol results with design-based intervals, comparison with the references) and the simulation output `sim_prop5.csv`. |
 | `results/v4/SAGE_CP_v4_results.zip` | Outputs of the v4 run (Kaggle CPU, 4 cores, 2 h 57 min): per-unit results of every study, Rao–Wu design-based replicates, risk cut-offs, Gibbs class selections, NHANES and concept-shift summaries. `scripts/v4_tables.py` builds the manuscript tables from it. |
 | `results/v3/` | Combined outputs of both extension-study runs: per-unit results (`units.csv`, `v3_unit_level.csv`), method summaries, all pre-specified contrasts, finite-sample reference gaps, the Gibbs function-class selections, configurations and checks, and the Markdown tables used in the manuscript. |
 | `scripts/v3_tables.py` | Builds Table IX and Supplementary Tables S21–S23 from `results/v3/`. |

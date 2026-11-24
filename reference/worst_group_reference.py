@@ -1,6 +1,6 @@
 """worst_group_reference: finite-sample reference for the worst-group coverage of label x cell split conformal prediction.
 
-Setting (Proposition 3 of the paper). Positives are calibrated within K disjoint cells. Cell k has n_k calibration
+Setting (Propositions 3-5 of the paper). Positives are calibrated within K disjoint cells. Cell k has n_k calibration
 positives (a "pool"); a borrowed cell uses its parent's pool, so cells in the same pool share one threshold.
 Evaluation positive i lies in cell k(i). Groups are arbitrary (possibly overlapping) sets of evaluation positives.
 Under exchangeability within each pool and continuous scores, the coverage probability of pool p is
@@ -9,16 +9,18 @@ independent across pools, and Z_i | pi ~ Bernoulli(pi_{p(k(i))}) independently.
 
 Functions
 ---------
-worst_group_reference(n_cal, cell_of_pos, groups, alpha, sims, seed, pool_of=None)
+worst_group_reference(n_cal, cell_of_pos, groups, alpha, sims, seed, pool_of=None, weights=None)
     Exact law of min_h Cov_h by Monte Carlo of the two-stage model (mean, 5th percentile, draws).
 worst_group_bounds(n_cal, cell_of_pos, groups, alpha, pool_of=None)
     Simulation-free results:
       upper  = min_h E[Cov_h]                      (E[min] <= upper; Jensen / min of means)
-      lower  = E[min of independent copies with the exact marginals]   (E[min] >= lower; association, Theorem 1)
+      lower  = E[min of independent copies with the exact marginals]   (E[min] >= lower; association, Proposition 4)
       t05    = largest t with prod_h P(Cov_h >= t) >= 0.95   (P(min < t05) <= 0.05; a valid level-0.05 cut-off)
       clark  = normal approximation to E[min] (Clark, 1961) using the exact means and covariances
     Marginals P(Cov_h = j/|h|) are exact: Cov_h * |h| is a sum over pools of independent beta-binomial counts.
 """
+__version__ = "1.0.0"
+__all__ = ["worst_group_reference", "worst_group_bounds"]
 import math
 import numpy as np
 from scipy.stats import betabinom, norm
@@ -34,9 +36,13 @@ def _pools(n_cal, cells, pool_of):
     return pool_of, pools
 
 
-def worst_group_reference(n_cal, cell_of_pos, groups, alpha=0.10, sims=2000, seed=0, pool_of=None):
-    """n_cal: dict pool -> number of calibration positives; cell_of_pos: array of cell labels (one per evaluation
-    positive); groups: list of boolean arrays over evaluation positives; pool_of: dict cell -> pool (default identity)."""
+def worst_group_reference(n_cal, cell_of_pos, groups, alpha=0.10, sims=2000, seed=0, pool_of=None, weights=None):
+    """n_cal: dict pool -> number of calibration positives (for survey-weighted calibration, the Kish effective sample
+    size of the pool, which makes the result approximate); cell_of_pos: array of cell labels (one per evaluation
+    positive); groups: list of boolean arrays over evaluation positives; pool_of: dict cell -> pool (default identity);
+    weights: optional survey weights of the evaluation positives. With weights, each group coverage is the weighted
+    mean of its positives' coverage indicators (Proposition 5, exact conditional on the weights for unweighted
+    calibration)."""
     rng = np.random.default_rng(seed)
     cell_of_pos = np.asarray(cell_of_pos)
     cells = sorted(set(cell_of_pos))
@@ -46,8 +52,10 @@ def worst_group_reference(n_cal, cell_of_pos, groups, alpha=0.10, sims=2000, see
         n = int(n_cal[p]); k = _kappa(n, alpha)
         pi[p] = np.ones(sims) if (n <= 0 or k > n) else rng.beta(k, n + 1 - k, size=sims)
     P = np.column_stack([pi[pool_of[c]] for c in cell_of_pos])
-    Z = (rng.random(P.shape) < P).astype(np.float32)
-    M = np.array(groups, np.float32).T
+    Z = (rng.random(P.shape) < P).astype(np.float64)
+    M = np.array(groups, np.float64).T
+    if weights is not None:
+        M = M * np.asarray(weights, np.float64)[:, None]
     mn = ((Z @ M) / M.sum(0)).min(1)
     return dict(mean=float(mn.mean()), p05=float(np.quantile(mn, 0.05)), draws=mn)
 

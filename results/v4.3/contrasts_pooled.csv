@@ -1,0 +1,14 @@
+study,weighting,outcome,contrast,metric,better,n_units,mean_diff,median_diff,ci95_lo,ci95_hi,n_A_better,n_ties,p_wilcoxon,p_sign,p_wilcoxon_holm,holm_family_size,design_se,design_lo,design_hi,n_replicates
+RAWP,design,pooled,ClassCond-SW - ClassCond,absdev_cov_pos,-,54,-0.01582,-0.0141,-0.02166,-0.0103,41,0,0.000005575,0.0001751,0.0000446,15,0.002565,-0.01878,-0.008494,200
+RAWP,design,pooled,ClassCond-SW - ClassCond,wg_cal_pos,+,54,0.08899,0.08288,0.07878,0.09943,54,0,1.626e-10,1.11e-16,2.439e-9,15,0.004909,0.08215,0.1005,200
+RAWP,design,pooled,GroupCond-SW - GroupCond,wg_cal_pos,+,54,-0.01861,-0.02027,-0.02359,-0.01358,7,0,3.165e-8,2.292e-8,3.165e-7,15,0.003149,-0.0193,-0.007441,200
+RAWP,design,pooled,GroupCond-SW - GroupCond,absdev_cov_pos,-,54,0.002298,0.001647,-0.0003961,0.005019,23,0,0.1644,0.3409,0.6574,15,0.001704,-0.0003296,0.006459,200
+RAWP,design,pooled,GroupCond-SW - GroupCond,set_size,-,54,-0.0161,-0.016,-0.02091,-0.01155,45,0,3.86e-7,7.288e-7,0.000003474,15,0.0006605,-0.01535,-0.0128,200
+RAWP,design,pooled,SAGE-CP-SW - GroupCond-SW,wg_cal_pos,+,54,-0.004306,-0.002174,-0.01431,0.005284,26,0,0.5964,0.8919,1,15,0.005115,-0.02096,-0.001894,200
+RAWP,design,pooled,SAGE-CP-SW - GroupCond-SW,absdev_cov_pos,-,54,-0.004527,-0.004497,-0.008314,-0.0007166,37,0,0.01042,0.009073,0.0521,15,0.001701,-0.006752,-0.0002835,200
+RAWP,design,pooled,GroupCond-SW - ClassCond,wg_cal_pos,+,54,0.1617,0.185,0.131,0.1914,52,0,3.229e-9,1.65e-13,3.874e-8,15,0.007219,0.1461,0.1748,200
+RAWP,design,pooled,GroupCond-RT - GroupCond,wg_cal_pos,+,54,0,0,0,0,0,54,,,,15,,,,
+RAWP,unweighted,pooled,ClassCond-SW - ClassCond,absdev_cov_pos,-,54,0.01733,0.02355,0.01197,0.02227,9,0,0.000002997,7.288e-7,0.00002997,15,,,,
+RAWP,unweighted,pooled,ClassCond-SW - ClassCond,wg_cal_pos,+,54,0.09171,0.09224,0.08226,0.1017,54,0,1.626e-10,1.11e-16,2.439e-9,15,,,,
+RAWP,unweighted,pooled,GroupCond-SW - GroupCond,wg_cal_pos,+,54,-0.0175,-0.01807,-0.02058,-0.01441,3,0,1.179e-9,2.919e-12,1.452e-8,15,,,,
+RAWP,unweighted,pooled,GroupCond-RT - GroupCond,wg_cal_pos,+,54,0,0,0,0,0,54,,,,15,,,,

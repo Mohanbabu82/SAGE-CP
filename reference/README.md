@@ -1,6 +1,18 @@
 # Worst-group reference for label × cell split conformal prediction
 
-`worst_group_reference.py` implements Proposition 3 and Theorem 1 of the paper.
+`worst_group_reference.py` implements Propositions 3, 4 and 5 of the paper (Proposition 4 was called Proposition 4 in earlier versions).
+
+## Install
+
+```bash
+pip install "git+https://github.com/Mohanbabu82/SAGE-CP.git#subdirectory=reference"
+```
+
+Requires Python ≥ 3.9, NumPy and SciPy. A full worked example (simulate a calibration, compute the observed worst group, compare it with the unweighted and design-weighted references) is in `examples/worked_example.py`; tests are in `tests/`.
+
+For population-weighted (design-weighted) worst-group coverage pass the survey weights of the evaluation positives as `weights=` (Proposition 5). For survey-weighted calibration, pass each pool's Kish effective sample size as its `n_cal` (an approximation).
+
+## Quick start
 
 ```python
 import numpy as np
